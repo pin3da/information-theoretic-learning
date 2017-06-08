@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{amsmath,amssymb}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\title{Information Theoretic Learning}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.5in
+\advance\evensidemargin-1.5in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+
+  \begin{document}
+
+  \begin{center}{\huge{\textbf{Information theoretic learning notes}}}\\
+    {\large By Manuel Pineda}
+  \end{center}
+  \begin{multicols*}{3}
+
+    \tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+      \tikzstyle{fancytitle} =[fill=gray, text=white, font=\bfseries]
+      \begin{tikzpicture}
+
+        \node [mybox] (box){%
+          \begin{minipage}{0.3\textwidth}
+            Self information: \\
+            $\mathbf{I}(X) = \log{\frac{1}{\mathbf{P}(X)}}$ \\
+            Shannon entropy of a random variable $X$
+            (expected value over the self information of $X$): \\
+            $\mathbf{H}(X) = \mathbf{E}[\mathbf{I}(X)] = \mathbf{E}[- \log{\mathbf{P}(X)}]$ \\
+            Conditional entropy: \\
+            $\mathbf{H}(X \mid Y) = - \sum_{i,j}{p(x_{i}, y_{j}) * \log{\frac{p(x_{i}, y_{j})}{p(y_{i})}}}$ \\
+            \\
+            Properties of shannon entropy: \\
+            - Continuity \\
+            - Symmetry: $\mathbf{H}(p_1, p_2, ...,p_n) = \mathbf{H}(p_2, p_1, ..., p_n)$ \\
+            - Maximum: \\
+            - Additivity \\
+          \end{minipage}
+        };
+        \node[fancytitle, right=10pt] at (box.north west) {Shannon Entropy and information unit.};
+      \end{tikzpicture}
+
+  \end{multicols*}
+  \end{document}
